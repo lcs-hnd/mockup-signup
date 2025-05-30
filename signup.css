@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+@font-face {
+    font-family: 'Norse-Bold';
+    src: url(./fonts/Norse-Bold.otf);
+}
+
+/* main grid container */
+.container {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    
+}
+
+/* left side of the website */
+.left-side {
+    background: url(./images/fowler.jpg) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+
+    /*  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* translucent background for logo */
+    padding: 25px 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.288);
+
+    /* space between the logo and text */
+    gap: 20px;
+
+    /* moving it up */
+    position: relative;
+    top: -20%;
+}
+
+.banner img {
+    height: 100px;
+    width: auto;
+}
+
+.banner h1 {
+    padding-top: 15px;
+    color: white;
+    font-family: Norse-Bold;
+    font-size: 4rem;
+}
+
+/* right side */
+.right-side {
+    
+}
+
+.headline {
+    color: white;
+}
+
+.entice {
+    color: white;
+}
