@@ -18,11 +18,30 @@ body {
     src: url(./fonts/Vintage.otf);
 }
 
-/* main grid container */
+@font-face {
+    font-family: 'Monainn';
+    src: url(./fonts/Monainn.otf);
+}
+
+@font-face {
+    font-family: 'Ren';
+    src: url(./fonts/Ren.ttf);
+}
+
+@font-face {
+    font-family: 'Puritan';
+    src: url(./fonts/Puritan.ttf);
+}
+
+/* these css rules will apply 900<= */
+
+
+
+
+/* separates the entire page into a two column structure */
 .container {
     display: grid;
-    grid-template-columns: 35% 65%;
-    
+    /* grid-template-columns: minmax(250px, clamp(250px, 35%, 500px)) 1fr;  */
 }
 
 /* left side of the website */
@@ -32,10 +51,8 @@ body {
     width: 100%;
     height: 100vh;
 
-    /*  */
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -44,10 +61,10 @@ body {
     justify-content: center;
     align-items: center;
 
-    /* translucent background for logo */
-    padding: 25px 0;
+    /* takes up entire left column and space under and above it */
+    padding: 25px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0);
+   
 
     /* space between the logo and text */
     gap: 20px;
@@ -55,6 +72,24 @@ body {
     /* moving it up */
 }
 
+/* makes the logo pop and adds automatic resizing */
+.banner img {
+    height: auto;
+    max-width: 80px;
+    filter: grayscale(100%) brightness(100%) invert(100%); 
+    flex-shrink: 1;
+}
+
+.banner h1 {
+    color: white;
+    font-family: Vintage;
+    font-size: clamp(2rem, 6vw, 3rem);
+    flex-shrink: 1;
+    overflow-wrap: break-word;
+}
+
+
+/* left column mantra text */
 .mantra {
     list-style-type: none;
     padding: 0;
@@ -70,48 +105,55 @@ body {
     width: fit-content;
 }
 
+
+/* left column filler */
 .recipe-banner {
+    text-align: center;
     color: rgb(255, 255, 255);
     border-radius: 20px;
-    border: solid;
+    border-style: double;
     margin: 20px;
     background-color: rgba(0, 0, 0, 0.413);
+    max-height: 25vh;
+    max-width: 60vw;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
+.recipe-banner::-webkit-scrollbar{
+    display: none;
+}
+
+
 .recipe-banner ul {
-    list-style-type: disc;
+    list-style-type: none;
     padding: 0 40px 10px 40px;
+    
 }
 
 .recipe-banner li {
     padding-bottom: 20px;
+    font-family: monospace;
+    
 }
 
 #recipe-heading {
+    font-family: Puritan;
+    font-size: x-large;
     list-style-type: none;
     text-align: center;
-    padding-top: 0px;
+    padding-top: 20px;
     margin-top: 0px;
 }
 
-.banner img {
-    height: 100px;
-    width: auto;
-    filter: grayscale(100%) brightness(100%) invert(100%);
-}
-
-.banner h1 {
-    color: white;
-    font-family: Vintage;
-    font-size: 4rem;
-}
-
-
 
 /* right side */
+
+/* font color and whole side arrangement */
 .right-side {
-    color: white;
-    display: flex;
+    color: white; 
+    display: flex; 
     flex-direction: column;
 }
 
@@ -136,50 +178,76 @@ h3 {
 section{
     background-color: rgb(30, 28, 25);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-area-label {
     text-align: center;
     font-family: monospace;
     font-size: x-large;
-    padding: 20px 40px 40px 40px;
+    padding: 20px 40px 20px 40px;
 
 }
+
+.input-group.first-name       { grid-area: first-name; }
+.input-group.last-name        { grid-area: last-name; }
+.input-group.email            { grid-area: email; }
+.input-group.phone-number     { grid-area: phone-number; }
+.input-group.password         { grid-area: password; }
+.input-group.confirm-password { grid-area: confirm-password; }
+
 
 form {
     font-family: monospace;
     /* make two columns */
+    
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-areas:
+        "first-name last-name"
+        "email phone-number"
+        "password confirm-password";
+    gap: 20px;
+    padding: 0 40px 40px 40px;
 }
 
-label {
-    padding-bottom: 5px;
-    padding-top: 15px;
-}
-
-fieldset {
+.input-group {
     display: flex;
     flex-direction: column;
-    border: none;
-    padding-bottom: 40px;
-}
-
-.left-form {
-    padding-left: 40px;
-}
-
-.right-form {
-    padding-right: 40px;
 }
 
 input {
     border: solid grey;
     border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
 }
 
 .third-area {
     background-color: rgb(27, 26, 31);
     flex-grow: 1;
+}
+
+.signature {
+    color: white;
+    text-decoration: none;
+    
+}
+
+
+@media (max-width: 500px) {
+    form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "first-name"
+            "last-name"
+            "email"
+            "phone-number"
+            "password"
+            "confirm-password";
+    }
 }
