@@ -5,12 +5,17 @@
 }
 
 body {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 
 @font-face {
     font-family: 'Norse-Bold';
     src: url(./fonts/Norse-Bold.otf);
+}
+
+@font-face {
+    font-family: 'Vintage';
+    src: url(./fonts/Vintage.otf);
 }
 
 /* main grid container */
@@ -29,7 +34,8 @@ body {
 
     /*  */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
 }
 
@@ -41,37 +47,139 @@ body {
     /* translucent background for logo */
     padding: 25px 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.288);
+    background-color: rgba(0, 0, 0, 0);
 
     /* space between the logo and text */
     gap: 20px;
 
     /* moving it up */
-    position: relative;
-    top: -20%;
+}
+
+.mantra {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mantra li {
+    background-color: black;
+    color: white;
+    width: fit-content;
+}
+
+.recipe-banner {
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: solid;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.413);
+}
+
+.recipe-banner ul {
+    list-style-type: disc;
+    padding: 0 40px 10px 40px;
+}
+
+.recipe-banner li {
+    padding-bottom: 20px;
+}
+
+#recipe-heading {
+    list-style-type: none;
+    text-align: center;
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
 .banner img {
     height: 100px;
     width: auto;
+    filter: grayscale(100%) brightness(100%) invert(100%);
 }
 
 .banner h1 {
-    padding-top: 15px;
     color: white;
-    font-family: Norse-Bold;
+    font-family: Vintage;
     font-size: 4rem;
 }
 
+
+
 /* right side */
 .right-side {
-    
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    padding: 20px 40px 0px 30px;
+    font-family: monospace;
 }
 
 .headline {
-    color: white;
+    font-family: monospace;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+
 }
 
 .entice {
-    color: white;
+    font-family: monospace;
+    padding: 10px 0 20px 30px;
+}
+
+section{
+    background-color: rgb(30, 28, 25);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-area-label {
+    text-align: center;
+    font-family: monospace;
+    font-size: x-large;
+    padding: 20px 40px 40px 40px;
+
+}
+
+form {
+    font-family: monospace;
+    /* make two columns */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+label {
+    padding-bottom: 5px;
+    padding-top: 15px;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding-bottom: 40px;
+}
+
+.left-form {
+    padding-left: 40px;
+}
+
+.right-form {
+    padding-right: 40px;
+}
+
+input {
+    border: solid grey;
+    border-radius: 5px;
+}
+
+.third-area {
+    background-color: rgb(27, 26, 31);
+    flex-grow: 1;
 }
