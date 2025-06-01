@@ -54,34 +54,39 @@
             <!-- form area -->
             <section>
                 <div class="form-area-label">six <u>lines</u> from serenity.</div>
-                <form action="">
+                <form action="" id="info">
                         <div class="input-group first-name">
                             <label for="first_name">FIRST NAME</label>
-                            <input type="text" name="first_name" id="first_name">
+                            <input type="text" name="first_name" id="first_name" required>
                         </div>
                         <div class="input-group email">
                             <label for="email">EMAIL</label>
-                            <input type="email" name="email" id="email">
+                            <input type="email" name="email" id="email" required>
                         </div>
                         <div class="input-group password">
                             <label for="password">PASSWORD</label>
-                            <input type="password" name="password" id="password">
+                            <input type="password" name="password" id="password" required>
                         </div>
                 
                         <div class="input-group last-name">
                             <label for="last_name">LAST NAME</label>
-                            <input type="text" name="last_name" id="last_name">
+                            <input type="text" name="last_name" id="last_name" required>
                         </div>
                         <div class="input-group phone-number">
                             <label for="phone_number">PHONE NUMBER</label>
-                            <input type="text" name="phone_number" id="phone_number">
+                            <input type="tel" name="phone_number" id="phone_number" required>
                         </div>
                         <div class="input-group confirm-password">
                             <label for="confirm_password">PSWRD-CONFIRM</label>
-                            <input type="password" name="confirm_password" id="confirm_password">
+                            <input type="password" name="confirm_password" id="confirm_password" required>
                         </div>
                 </form>
-                <div class="creation-logon">part of the club? <a class="log-in" href="">log in.</a></div>
+                <button class="form-submit" type="submit" form="info"> (>)
+                    <img id="duck" src="./images/up-to-no-good.png" alt="submit button">
+                </button>
+                <div class="creation-logon">
+                    part of the club? <a class="log-in" href="">log in.</a>
+                </div>
             </section>
             <div class="third-area">
             </div>
