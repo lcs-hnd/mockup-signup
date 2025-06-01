@@ -293,12 +293,11 @@ input:focus {
     position: relative;
     top: -14%;
     right: -5%;
+    opacity: 50%;
 }
 
 .form-submit:hover #duck {
-    transform: scale(1.1);
-    filter: hue-rotate(10deg) saturate(200%) brightness(110%);
+    opacity: 100%;
+    transform: scale(1.02);
     transition: transform 0.1s linear;
-
-    
 }
